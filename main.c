@@ -67,9 +67,12 @@ void addBook(){
         printf( "\t\tEnter price: " );
         scanf("%d", &price);
 
-
-        if(price != 0 && price > 0 && price != "NAN"){
-            isValid = 1;
+        if( strcmp(name, "") != 0 ){
+            if(strcmp(author, "") != 0){
+                if(price != 0 && price > 0 && price != "NAN"){
+                    isValid = 1;
+                }
+            }
         }
 
         if( isValid == 1 ){
@@ -92,7 +95,7 @@ void addBook(){
             getchar();
             mainMenu();
         }else{
-            printf("\n\t\tPrice can't be negative or zero!\n\t\tEnter any key to try again..");
+            printf("\n\t\tWrong entry!\n\t\tEnter any key to try again..");
             fflush(stdin);
             getchar();
             mainMenu();
